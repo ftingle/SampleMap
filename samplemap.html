@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Assigned'],
+		  ['Aland Islands', 100],
+['Antarctica',100],
+['Austria',200],
+['Belarus',300],
+['Belgium',300],
+['Bulgaria',300],
+['CZ',300],
+['Denmark',100],
+['Estonia',100],
+['Faroe Islands',100],
+['Finland',100],
+['Germany',200],
+['Hungary',300],
+['Iceland',100],
+['Latvia',100],
+['Liechtenstein',200],
+['Lithuania',100],
+['Luxembourg',300],
+['Netherlands',300],
+['Norway',100],
+['Poland',300],
+['MD',300],
+['Romania',300],
+['Russia',100],
+['Isle of Sark',100],
+['Slovakia',300],
+['Svalbard and Jan Mayen',100],
+['Sweden',100],
+['Switzerland',200],
+['Ukraine',300]
+
+
+
+        ]);
+
+        var options = {
+		colorAxis: {colors: ['#00853f', 'black', '#e31b23']},
+		};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
